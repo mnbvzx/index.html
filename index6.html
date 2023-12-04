@@ -1,0 +1,89 @@
+<!DOCTYPE HTML> 
+<html> 
+	<head> 
+        <style>
+            body {
+                background-color: #e9967a;
+            }
+        </style>
+		<link rel="stylesheet" href="style1.css">
+		<title>Розрахувати</title>
+    </head> 
+	<body> 
+		<header>
+			<h1 style="text-align:center;">Розрахунок рентабельності продажів</h1> 
+            <nav id="menu">
+				<ul class="list">
+					<li class="li"><a href="index4.html">Головна</a></li>
+					<li><a href="index5.html">Рентабельність продажів</a></li>
+                    <li><a href="index6.html">Калькулятор</a></li>
+                    </ul>
+        </header>
+		
+		<main>
+		  <div>
+			<div class="post">
+				<h3>Розрахунок рентабельності продажів</h3>
+				<p>
+                    Є декілька видів розрахунку рентабельності продажів: <br>
+                    <ul>
+                    <li>валовий;</li>
+                    <li>операційний;</li>
+                    <li>чистий.</li>
+                    </ul>
+                    Визначити рентабельність можна, розділивши суму <i><b>чистого прибутку</i></b> на <i><b>виторг від продажу</i></b>. Щоб розрахувати валову та операційну рентабельність, на місце чистого прибутку треба <i>підставити</i> значення валового або операційного прибутку. <br>
+				</p>
+                <img height="200" width="1000" src="https://wezom.com.ua/ua/Media/files/filemanager/pic/rentabelnost-prodazh-4.png" alt="Card image cap"><br>
+
+                <div id="ROS" class="section light">
+                    <h2>Рентабельність продажів (Return on Sales)</h2>
+                    <p class="formula"> ROS = (Чистий прибуток / Виручка від реалізації) * 100%</p>
+                    <form id="ros-form">
+                      <label for="ros-net-profit">Чистий прибуток:</label>
+                      <input type="number" id="ros-net-profit" name="ros-net-profit" required>
+                      <p></p>
+                      <label for="revenue">Виручка від реалізації:</label>
+                      <input type="number" id="revenue" name="revenue" required>
+                      <p></p>
+                      <button type="button" onclick="calculateROS()">Розрахувати</button>
+                    </form>
+                    <p class="result">Рентабельність продажів (ROS): <span id="ros-result"></span>%</p>
+                  </div>
+                  
+			</div>
+            </div>
+            <p></p>
+            <div class="wrapper">
+                <input type="text" id = "input_a">
+                <select name="" id="act">
+                    <option value="1">+</option>
+                    <option value="2">-</option>
+                    <option value="3">*</option>
+                    <option value="4">/</option>
+                </select>
+                <input type="text" id = "input_b">
+                <input type="text" id = "input_c">
+                <button id = "btn">Action</button>
+                </div>
+            <script>
+                function fnc(){
+                    let a = parseInt(input_a.value);
+                    let b = parseInt(input_b.value);
+                    var el=document.getElementById('act');
+                    console.log(el.value);
+                    var c;
+                    if (el.value ==1){c = a + b;}
+                    if (el.value ==2){c = a - b;}
+                    if (el.value ==3){c = a * b;}
+                    if (el.value ==4){c = a / b;}
+                    input_c.value = c;
+                    console.log(c);
+                }
+                btn.addEventListener("click",fnc);
+            </script>
+			<footer>
+                <h2 style="text-align:center;">&copy; 2023 Усі права захищені.</h2>
+              </footer>
+		</main>
+	</body> 
+</html>
